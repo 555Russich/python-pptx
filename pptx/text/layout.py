@@ -311,7 +311,6 @@ def _rendered_size(text, point_size, font_file):
 
     font = _Fonts.font(font_file, point_size)
     _, _, px_width, px_height = font.getbbox(text)
-    px_width, px_height = font.getsize(text)
 
     emu_width = int(px_width / px_per_inch * emu_per_inch)
     emu_height = int(px_height / px_per_inch * emu_per_inch)
