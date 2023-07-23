@@ -8,7 +8,6 @@ import sys
 from struct import calcsize, unpack_from
 
 from ..util import lazyproperty
-from setup import thisdir
 
 
 class FontFiles(object):
@@ -99,15 +98,10 @@ class FontFiles(object):
 
     @classmethod
     def _linux_font_directories(cls):
-        linux_font_dirs = [
-            '/usr/share/fonts',
-            '/etc/fonts'
-        ]
+        linux_font_dirs = ['/usr/share/fonts', '/etc/fonts']
         home = os.environ.get('HOME')
         if home is not None:
-            linux_font_dirs.extend([
-                os.path.join(home, '.fonts')
-            ])
+            linux_font_dirs.extend([os.path.join(home, '.fonts')])
         return linux_font_dirs
 
 
